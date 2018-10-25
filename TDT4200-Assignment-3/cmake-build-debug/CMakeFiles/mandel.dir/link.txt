@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp -lpthread -Wall -Wextra -Wpedantic -std=c++11 -g  -rdynamic CMakeFiles/mandel.dir/src/main.cpp.o CMakeFiles/mandel.dir/src/utilities/lodepng.cpp.o  -o mandel/mandel -Wl,-rpath,/usr/lib/openmpi/lib /usr/lib/openmpi/lib/libmpi.so 
