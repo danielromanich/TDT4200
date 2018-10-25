@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_267d1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_267d1.dir/build.make CMakeFiles/cmTC_267d1.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_267d1.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_267d1.dir/testCCompiler.c.o   -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_267d1
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_267d1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_267d1.dir/testCCompiler.c.o  -o cmTC_267d1 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9feeb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9feeb.dir/build.make CMakeFiles/cmTC_9feeb.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9feeb.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9feeb.dir/testCCompiler.c.o   -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_9feeb
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9feeb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9feeb.dir/testCCompiler.c.o  -o cmTC_9feeb 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7fb02/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7fb02.dir/build.make CMakeFiles/cmTC_7fb02.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_7fb02
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fb02.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o  -o cmTC_7fb02 
+Run Build Command:"/usr/bin/make" "cmTC_0b8bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0b8bd.dir/build.make CMakeFiles/cmTC_0b8bd.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_0b8bd
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b8bd.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o  -o cmTC_0b8bd 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -59,23 +59,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7fb02' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjLXIJL.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7fb02 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0b8bd' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvc9wUG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_0b8bd /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7fb02/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7fb02.dir/build.make CMakeFiles/cmTC_7fb02.dir/build]
-  ignore line: [make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_7fb02]
-  ignore line: [/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fb02.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o  -o cmTC_7fb02 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_0b8bd/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_0b8bd.dir/build.make CMakeFiles/cmTC_0b8bd.dir/build]
+  ignore line: [make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_0b8bd]
+  ignore line: [/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b8bd.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o  -o cmTC_0b8bd ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7fb02' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjLXIJL.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7fb02 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0b8bd' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvc9wUG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_0b8bd /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccjLXIJL.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvc9wUG.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -109,7 +109,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7fb02] ==> ignore
+    arg [cmTC_0b8bd] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -121,7 +121,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_7fb02.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_0b8bd.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -149,17 +149,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_45a7a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_45a7a.dir/build.make CMakeFiles/cmTC_45a7a.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_45a7a.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_45a7a.dir/feature_tests.c.o   -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_45a7a
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45a7a.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_45a7a.dir/feature_tests.c.o  -o cmTC_45a7a 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_8ae4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ae4c.dir/build.make CMakeFiles/cmTC_8ae4c.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8ae4c.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_8ae4c.dir/feature_tests.c.o   -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_8ae4c
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ae4c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8ae4c.dir/feature_tests.c.o  -o cmTC_8ae4c 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -169,17 +169,17 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1aa18/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1aa18.dir/build.make CMakeFiles/cmTC_1aa18.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1aa18.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_1aa18.dir/feature_tests.c.o   -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1aa18
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1aa18.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1aa18.dir/feature_tests.c.o  -o cmTC_1aa18 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a9cb1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a9cb1.dir/build.make CMakeFiles/cmTC_a9cb1.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a9cb1.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_a9cb1.dir/feature_tests.c.o   -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_a9cb1
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9cb1.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a9cb1.dir/feature_tests.c.o  -o cmTC_a9cb1 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -189,17 +189,17 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e7d8a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e7d8a.dir/build.make CMakeFiles/cmTC_e7d8a.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e7d8a.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_e7d8a.dir/feature_tests.c.o   -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e7d8a
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7d8a.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e7d8a.dir/feature_tests.c.o  -o cmTC_e7d8a 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_17f6c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_17f6c.dir/build.make CMakeFiles/cmTC_17f6c.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_17f6c.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_17f6c.dir/feature_tests.c.o   -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_17f6c
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17f6c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_17f6c.dir/feature_tests.c.o  -o cmTC_17f6c 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -207,30 +207,30 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dfd72/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dfd72.dir/build.make CMakeFiles/cmTC_dfd72.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_dfd72.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_dfd72.dir/testCXXCompiler.cxx.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_dfd72
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dfd72.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_dfd72.dir/testCXXCompiler.cxx.o  -o cmTC_dfd72 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_94301/fast"
+/usr/bin/make -f CMakeFiles/cmTC_94301.dir/build.make CMakeFiles/cmTC_94301.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_94301.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_94301.dir/testCXXCompiler.cxx.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_94301
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94301.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_94301.dir/testCXXCompiler.cxx.o  -o cmTC_94301 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_efdf3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_efdf3.dir/build.make CMakeFiles/cmTC_efdf3.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_efdf3
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efdf3.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_efdf3 
+Run Build Command:"/usr/bin/make" "cmTC_e04f2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e04f2.dir/build.make CMakeFiles/cmTC_e04f2.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_e04f2
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e04f2.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e04f2 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -240,23 +240,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_efdf3' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjE8oF1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_efdf3 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e04f2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCpR05Z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_e04f2 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_efdf3/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_efdf3.dir/build.make CMakeFiles/cmTC_efdf3.dir/build]
-  ignore line: [make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_efdf3]
-  ignore line: [/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efdf3.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_efdf3 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e04f2/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e04f2.dir/build.make CMakeFiles/cmTC_e04f2.dir/build]
+  ignore line: [make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2018.1.1/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_e04f2]
+  ignore line: [/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e04f2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e04f2 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -266,13 +266,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_efdf3' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjE8oF1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_efdf3 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e04f2' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCpR05Z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_e04f2 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccjE8oF1.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccCpR05Z.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -290,7 +290,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_efdf3] ==> ignore
+    arg [cmTC_e04f2] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -302,7 +302,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_efdf3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_e04f2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -328,17 +328,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ddce8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ddce8.dir/build.make CMakeFiles/cmTC_ddce8.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ddce8.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_ddce8.dir/feature_tests.cxx.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ddce8
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddce8.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ddce8.dir/feature_tests.cxx.o  -o cmTC_ddce8 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_50924/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50924.dir/build.make CMakeFiles/cmTC_50924.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_50924.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_50924.dir/feature_tests.cxx.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_50924
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50924.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_50924.dir/feature_tests.cxx.o  -o cmTC_50924 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -401,17 +401,17 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_16808/fast"
-/usr/bin/make -f CMakeFiles/cmTC_16808.dir/build.make CMakeFiles/cmTC_16808.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_16808.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_16808.dir/feature_tests.cxx.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_16808
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16808.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_16808.dir/feature_tests.cxx.o  -o cmTC_16808 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e6f14/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e6f14.dir/build.make CMakeFiles/cmTC_e6f14.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e6f14.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_e6f14.dir/feature_tests.cxx.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_e6f14
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6f14.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e6f14.dir/feature_tests.cxx.o  -o cmTC_e6f14 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -474,17 +474,17 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3bef8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3bef8.dir/build.make CMakeFiles/cmTC_3bef8.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3bef8.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_3bef8.dir/feature_tests.cxx.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_3bef8
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3bef8.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3bef8.dir/feature_tests.cxx.o  -o cmTC_3bef8 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_f4b81/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f4b81.dir/build.make CMakeFiles/cmTC_f4b81.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f4b81.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_f4b81.dir/feature_tests.cxx.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_f4b81
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4b81.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_f4b81.dir/feature_tests.cxx.o  -o cmTC_f4b81 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -547,17 +547,17 @@ make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignmen
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_04b12/fast"
-/usr/bin/make -f CMakeFiles/cmTC_04b12.dir/build.make CMakeFiles/cmTC_04b12.dir/build
-make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_04b12.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_04b12.dir/feature_tests.cxx.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_04b12
-/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04b12.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_04b12.dir/feature_tests.cxx.o  -o cmTC_04b12 
-make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_41b54/fast"
+/usr/bin/make -f CMakeFiles/cmTC_41b54.dir/build.make CMakeFiles/cmTC_41b54.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_41b54.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_41b54.dir/feature_tests.cxx.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_41b54
+/opt/clion-2018.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41b54.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_41b54.dir/feature_tests.cxx.o  -o cmTC_41b54 
+make[1]: Leaving directory '/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

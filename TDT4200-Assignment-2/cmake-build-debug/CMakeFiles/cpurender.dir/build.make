@@ -43,10 +43,10 @@ RM = /opt/clion-2018.1.1/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2
+CMAKE_SOURCE_DIR = "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cpurender.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/cpurender.dir/flags.make
 
 CMakeFiles/cpurender.dir/src/main.cpp.o: CMakeFiles/cpurender.dir/flags.make
 CMakeFiles/cpurender.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpurender.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/main.cpp.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpurender.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/main.cpp.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/main.cpp"
 
 CMakeFiles/cpurender.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpurender.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/main.cpp > CMakeFiles/cpurender.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/main.cpp" > CMakeFiles/cpurender.dir/src/main.cpp.i
 
 CMakeFiles/cpurender.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpurender.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/main.cpp -o CMakeFiles/cpurender.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/main.cpp" -o CMakeFiles/cpurender.dir/src/main.cpp.s
 
 CMakeFiles/cpurender.dir/src/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/cpurender.dir/src/main.cpp.o.provides.build: CMakeFiles/cpurender.dir
 
 CMakeFiles/cpurender.dir/src/rasteriser.cpp.o: CMakeFiles/cpurender.dir/flags.make
 CMakeFiles/cpurender.dir/src/rasteriser.cpp.o: ../src/rasteriser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpurender.dir/src/rasteriser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/rasteriser.cpp.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/rasteriser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpurender.dir/src/rasteriser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/rasteriser.cpp.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/rasteriser.cpp"
 
 CMakeFiles/cpurender.dir/src/rasteriser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpurender.dir/src/rasteriser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/rasteriser.cpp > CMakeFiles/cpurender.dir/src/rasteriser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/rasteriser.cpp" > CMakeFiles/cpurender.dir/src/rasteriser.cpp.i
 
 CMakeFiles/cpurender.dir/src/rasteriser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpurender.dir/src/rasteriser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/rasteriser.cpp -o CMakeFiles/cpurender.dir/src/rasteriser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/rasteriser.cpp" -o CMakeFiles/cpurender.dir/src/rasteriser.cpp.s
 
 CMakeFiles/cpurender.dir/src/rasteriser.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/cpurender.dir/src/rasteriser.cpp.o.provides.build: CMakeFiles/cpurend
 
 CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o: CMakeFiles/cpurender.dir/flags.make
 CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o: ../src/utilities/OBJLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/OBJLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/OBJLoader.cpp"
 
 CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/OBJLoader.cpp > CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/OBJLoader.cpp" > CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.i
 
 CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/OBJLoader.cpp -o CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/OBJLoader.cpp" -o CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.s
 
 CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/cpurender.dir/src/utilities/OBJLoader.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o: CMakeFiles/cpurender.dir/flags.make
 CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o: ../src/utilities/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/geometry.cpp"
 
 CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/geometry.cpp > CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/geometry.cpp" > CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.i
 
 CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/geometry.cpp -o CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/geometry.cpp" -o CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.s
 
 CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/cpurender.dir/src/utilities/geometry.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o: CMakeFiles/cpurender.dir/flags.make
 CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o: ../src/utilities/lodepng.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o -c /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/lodepng.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o -c "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/lodepng.cpp"
 
 CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/lodepng.cpp > CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/lodepng.cpp" > CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.i
 
 CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/src/utilities/lodepng.cpp -o CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/src/utilities/lodepng.cpp" -o CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.s
 
 CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o.requires:
 
@@ -196,7 +196,7 @@ cpurender/cpurender: CMakeFiles/cpurender.dir/src/utilities/lodepng.cpp.o
 cpurender/cpurender: CMakeFiles/cpurender.dir/build.make
 cpurender/cpurender: /usr/lib/openmpi/lib/libmpi.so
 cpurender/cpurender: CMakeFiles/cpurender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable cpurender/cpurender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable cpurender/cpurender"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpurender.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -217,6 +217,6 @@ CMakeFiles/cpurender.dir/clean:
 .PHONY : CMakeFiles/cpurender.dir/clean
 
 CMakeFiles/cpurender.dir/depend:
-	cd /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2 /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2 /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-2/cmake-build-debug/CMakeFiles/cpurender.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2" "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2" "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug" "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug" "/home/daniel/Desktop/Skole/TDT4200/TDT4200/Exercise 2/cmake-build-debug/CMakeFiles/cpurender.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/cpurender.dir/depend
 
