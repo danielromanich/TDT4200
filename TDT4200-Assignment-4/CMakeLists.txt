@@ -3,19 +3,19 @@
 #
 cmake_minimum_required (VERSION 3.0)
 
-set(CMAKE_C_COMPILER /usr/bin/gcc-5)
-set(CMAKE_CXX_COMPILER /usr/bin/g++-5)
+set(CMAKE_C_COMPILER /usr/bin/gcc-6)
+set(CMAKE_CXX_COMPILER /usr/bin/g++-6)
 
 project(gpurender)
 
 # Use this if CMake complains about the installation directory not being found.
 # The installation directory unfortunately depends on your operating system and/or distribution :(
-set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda-9.1)
+#set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda-9.1)
 
 find_package(CUDA REQUIRED)
 
 # These may need to be changed depending on your GPU
-list(APPEND CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS} -gencode arch=compute_52,code=\"sm_52,compute_52\" -lcurand -lineinfo)
+list(APPEND CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS} -gencode arch=compute_61,code=\"sm_61,compute_61\" -lcurand -lineinfo)
 
 
 #

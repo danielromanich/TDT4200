@@ -256,29 +256,9 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
     std::cout << "Rendering an image on the GPU.." << std::endl;
     std::cout << "Loading '" << inputFile << "' file... " << std::endl;
 
-    int version;
-    checkCudaErrors(cudaDriverGetVersion(&version));
-    std::cout << version << " was the driver version!" << std::endl;
-
-    int runTimeVersion;
-    checkCudaErrors(cudaRuntimeGetVersion(&runTimeVersion));
-    std::cout << runTimeVersion << " was the runtime version!" << std::endl;
-
-
     int count;
     checkCudaErrors(cudaGetDeviceCount(&count));
-
-    /*
-    cudaError_t error = cudaGetLastError();
-    if(error != cudaSuccess)
-    {
-        // print the CUDA error message and exit
-        printf("CUDA error: %s\n", cudaGetErrorString(error));
-        exit(-1);
-    }*/
-
-
-    std::cout << "Count: " << count << std::endl;
+    std::cout << "Device count: " << count << std::endl;
 
     std::vector<GPUMesh> meshes = loadWavefrontGPU(inputFile, false);
 

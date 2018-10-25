@@ -5,6 +5,8 @@
 
 *.out
 
+cmake-build-debug/*
+
 build/*
 output/*.png
 cpurender/*
