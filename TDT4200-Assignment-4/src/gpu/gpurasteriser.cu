@@ -357,6 +357,17 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
     std::cout << "Rendering an image on the GPU.." << std::endl;
     std::cout << "Loading '" << inputFile << "' file... " << std::endl;
 
+	int count;
+	checkCudaErrors(cudaGetDeviceCount(&count));
+	std::cout << "Device count: " << count << std::endl;
+
+	cudaDeviceProp props;
+	checkCudaErrors(cudaGetDeviceProperties(&props, 0));
+
+	std::cout << "Props: " << props.name << std::endl;
+
+	checkCudaErrors(cudaSetDevice(0));
+
     std::vector<GPUMesh> meshes = loadWavefrontGPU(inputFile, false);
 
     // We first need to allocate some buffers.
