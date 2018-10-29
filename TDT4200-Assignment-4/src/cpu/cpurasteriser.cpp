@@ -126,15 +126,17 @@ inline void rasteriseTriangles( Mesh &transformedMesh,
 		maxy = std::min(maxy, height);
 
 		// We iterate over each pixel in the triangle's bounding box
-		for(unsigned int x = minx; x < maxx; x++) {
+        for(unsigned int x = minx; x < maxx; x++) {
 			for(unsigned int y = miny; y < maxy; y++) {
 				float u, v, w;
 				if(face.inRange(x,y,u,v,w)){
-					float pixelDepth = face.getDepth(u,v,w);
-					if( pixelDepth >= -1 && pixelDepth <= 1 && pixelDepth < depthBuffer.at(y * width + x)) {
-						depthBuffer.at(y * width + x) = pixelDepth;
-						runFragmentShader(frameBuffer, x + (width * y), face, float3(u,v,w));
-					}
+                    {
+                        float pixelDepth = face.getDepth(u,v,w);
+                        if( pixelDepth >= -1 && pixelDepth <= 1 && pixelDepth < depthBuffer.at(y * width + x)) {
+                            depthBuffer.at(y * width + x) = pixelDepth;
+                            runFragmentShader(frameBuffer, x + (width * y), face, float3(u,v,w));
+                        }
+                    }
 				}
 			}
 		}
@@ -244,7 +246,7 @@ std::vector<unsigned char> rasteriseCPU(std::string inputFile, unsigned int widt
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    #pragma omp parallel for schedule(dynamic)
+    #pragma omp parallel for schedule(dynamic, 5)
     for(unsigned int item = 0; item < totalItemsToRender; item++) {
         // std::cout << "Thread #" << omp_get_thread_num() << std::endl;
         if(item % 10000 == 0) {
@@ -253,14 +255,9 @@ std::vector<unsigned char> rasteriseCPU(std::string inputFile, unsigned int widt
         workItemCPU objectToRender = workQueue.at(item);
         for (unsigned int i = 0; i < meshes.size(); i++) {
             Mesh &mesh = meshes.at(i);
-            Mesh &transformedMesh = transformedMeshes.at(i);
-
-            #pragma omp critical
-            {
-                runVertexShader(mesh, transformedMesh, objectToRender.distanceOffset, objectToRender.scale, width, height);
-                rasteriseTriangles(transformedMesh, frameBuffer, depthBuffer, width, height);
-            }
-
+            Mesh transformedMesh = meshes.at(i).clone(); //transformedMeshes.at(i);
+            runVertexShader(mesh, transformedMesh, objectToRender.distanceOffset, objectToRender.scale, width, height);
+            rasteriseTriangles(transformedMesh, frameBuffer, depthBuffer, width, height);
         }
     }
 

@@ -131,9 +131,6 @@
 		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/gpurasteriser.cuh">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/Node.cpp">
-			<Option target="gpurender"/>
-		</Unit>
 		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/OBJLoader.cpp">
 			<Option target="gpurender"/>
 		</Unit>

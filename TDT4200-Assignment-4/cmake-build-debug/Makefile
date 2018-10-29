@@ -226,33 +226,6 @@ src/cpu/utilities/geometry.cpp.s:
 	$(MAKE) -f CMakeFiles/gpurender.dir/build.make CMakeFiles/gpurender.dir/src/cpu/utilities/geometry.cpp.s
 .PHONY : src/cpu/utilities/geometry.cpp.s
 
-src/gpu/utilities/Node.o: src/gpu/utilities/Node.cpp.o
-
-.PHONY : src/gpu/utilities/Node.o
-
-# target to build an object file
-src/gpu/utilities/Node.cpp.o:
-	$(MAKE) -f CMakeFiles/gpurender.dir/build.make CMakeFiles/gpurender.dir/src/gpu/utilities/Node.cpp.o
-.PHONY : src/gpu/utilities/Node.cpp.o
-
-src/gpu/utilities/Node.i: src/gpu/utilities/Node.cpp.i
-
-.PHONY : src/gpu/utilities/Node.i
-
-# target to preprocess a source file
-src/gpu/utilities/Node.cpp.i:
-	$(MAKE) -f CMakeFiles/gpurender.dir/build.make CMakeFiles/gpurender.dir/src/gpu/utilities/Node.cpp.i
-.PHONY : src/gpu/utilities/Node.cpp.i
-
-src/gpu/utilities/Node.s: src/gpu/utilities/Node.cpp.s
-
-.PHONY : src/gpu/utilities/Node.s
-
-# target to generate assembly for a file
-src/gpu/utilities/Node.cpp.s:
-	$(MAKE) -f CMakeFiles/gpurender.dir/build.make CMakeFiles/gpurender.dir/src/gpu/utilities/Node.cpp.s
-.PHONY : src/gpu/utilities/Node.cpp.s
-
 src/gpu/utilities/OBJLoader.o: src/gpu/utilities/OBJLoader.cpp.o
 
 .PHONY : src/gpu/utilities/OBJLoader.o
@@ -354,9 +327,6 @@ help:
 	@echo "... src/cpu/utilities/geometry.o"
 	@echo "... src/cpu/utilities/geometry.i"
 	@echo "... src/cpu/utilities/geometry.s"
-	@echo "... src/gpu/utilities/Node.o"
-	@echo "... src/gpu/utilities/Node.i"
-	@echo "... src/gpu/utilities/Node.s"
 	@echo "... src/gpu/utilities/OBJLoader.o"
 	@echo "... src/gpu/utilities/OBJLoader.i"
 	@echo "... src/gpu/utilities/OBJLoader.s"
