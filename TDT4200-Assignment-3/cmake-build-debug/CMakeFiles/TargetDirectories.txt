@@ -1,3 +1,0 @@
-/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-3/cmake-build-debug/CMakeFiles/mandel.dir

@@ -1,5 +1,0 @@
-/opt/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4
--- Configuring done
--- Generating done
--- Build files have been written to: /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug
-Cannot read CMake dependency information from /home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/CMakeFiles/Makefile.cmake
