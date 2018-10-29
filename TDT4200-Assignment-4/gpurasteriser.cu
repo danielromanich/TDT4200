@@ -1,108 +1,16 @@
-#include "gpurasteriser.cuh"
-#include "utilities/OBJLoader.hpp"
+#include "src/gpu/gpurasteriser.cuh"
+#include "src/gpu/utilities/OBJLoader.hpp"
 #include <vector>
 #include <iomanip>
 #include <chrono>
 #include <limits>
 #include <iostream>
 #include <algorithm>
+#include <string>
+#include "src/gpu/utilities/node.hpp"
 #include "cuda_runtime.h"
-#include "utilities/cuda_error_helper.hpp"
-
-
-// UTILITY FUNCTIONS HAVE BEEN MOVED INTO THE KERNEL SOURCE FILE ITSELF
-// CUDA relocatable and separable compilation is possible, but due to the many possible
-// problems it can cause on different platforms, I decided to take the safe route instead
-// and make sure it would compile fine for everyone. That implies moving everything into
-// one file unfortunately.
-
-class globalLight {
-public:
-	float3 direction;
-	float3 colour;
-	__host__ __device__ globalLight(float3 const vdirection, float3 const vcolour) : direction(vdirection), colour(vcolour) {}
-};
-
-__host__ __device__ float dotGPU(float3 a, float3 b) {
-	return a.x * b.x + a.y * b.y + a.z * b.z;
-}
-
-__host__ __device__ float3 normalizeGPU(float3 v)
-{
-    float invLen = 1.0f / sqrtf(dotGPU(v, v));
-    v.x *= invLen;
-    v.y *= invLen;
-    v.z *= invLen;
-    return v;
-}
-
-// Utility function if you'd like to convert the depth buffer to an integer format.
-__host__ __device__ int depthFloatToInt(float value) {
-	value = (value + 1.0f) * 0.5f;
-    return static_cast<int>(static_cast<double>(value) * static_cast<double>(16777216)); 
-}
-
-__host__ __device__ bool isPointInTriangle(
-		float4 const &v0, float4 const &v1, float4 const &v2,
-		unsigned int const x, unsigned int const y,
-		float &u, float &v, float &w) {
-		u = (((v1.y - v2.y) * (x    - v2.x)) + ((v2.x - v1.x) * (y    - v2.y))) /
-				 	 (((v1.y - v2.y) * (v0.x - v2.x)) + ((v2.x - v1.x) * (v0.y - v2.y)));
-		if (u < 0) {
-			return false;
-		}
-		v = (((v2.y - v0.y) * (x    - v2.x)) + ((v0.x - v2.x) * (y    - v2.y))) /
-					(((v1.y - v2.y) * (v0.x - v2.x)) + ((v2.x - v1.x) * (v0.y - v2.y)));
-		if (v < 0) {
-			return false;
-		}
-		w = 1 - u - v;
-		if (w < 0) {
-			return false;
-		}
-		return true;
-}
-
-__host__ __device__ float3 computeInterpolatedNormal(
-		float3 const &normal0,
-		float3 const &normal1,
-		float3 const &normal2,
-		float3 const &weights
-	) {
-	float3 weightedN0, weightedN1, weightedN2;
-
-	weightedN0.x = (normal0.x * weights.x);
-	weightedN0.y = (normal0.y * weights.x);
-	weightedN0.z = (normal0.z * weights.x);
-
-	weightedN1.x = (normal1.x * weights.y);
-	weightedN1.y = (normal1.y * weights.y);
-	weightedN1.z = (normal1.z * weights.y);
-
-	weightedN2.x = (normal2.x * weights.z);
-	weightedN2.y = (normal2.y * weights.z);
-	weightedN2.z = (normal2.z * weights.z);
-
-	float3 weightedNormal;
-
-	weightedNormal.x = weightedN0.x + weightedN1.x + weightedN2.x;
-	weightedNormal.y = weightedN0.y + weightedN1.y + weightedN2.y;
-	weightedNormal.z = weightedN0.z + weightedN1.z + weightedN2.z;
-
-	return normalizeGPU(weightedNormal);
-}
-
-__host__ __device__ float computeDepth(
-		float4 const &v0, float4 const &v1, float4 const &v2,
-		float3 const &weights) {
-	return weights.x * v0.z + weights.y * v1.z + weights.z * v2.z;
-}
-
-
-
-
-
-// ORIGINAL SOURCE FILE IS STARTING HERE
+#include "src/gpu/utilities/cuda_error_helper.hpp"
+#include "src/gpu/utilities/geometry.hpp"
 
 struct workItemGPU {
     float scale;
@@ -111,6 +19,9 @@ struct workItemGPU {
     workItemGPU(float& scale_, float3& distanceOffset_) : scale(scale_), distanceOffset(distanceOffset_) {}
     workItemGPU() : scale(1), distanceOffset(make_float3(0, 0, 0)) {}
 };
+
+const std::vector<globalLight> lightSources = { {{0.3f, 0.5f, 1.0f}, {1.0f, 1.0f, 1.0f}} };
+
 
 void runVertexShader( float4 &vertex,
                       float3 positionOffset,
@@ -143,21 +54,21 @@ void runVertexShader( float4 &vertex,
 
 	mat4x4 const rotationMatrixX(
 		1,			0,				0, 				0,
-		0, 			cosf(0), 	-sinf(0),	0,
-		0, 			sinf(0),	cosf(0), 	0,
+		0, 			std::cos(0), 	-std::sin(0),	0,
+		0, 			std::sin(0),	std::cos(0), 	0,
 		0, 			0,				0,				1);
 
 	float const rotationAngleRad = (pi / 4.0f) + (rotationAngle / (180.0f/pi));
 
 	mat4x4 const rotationMatrixY(
-		cosf(rotationAngleRad), 0, sinf(rotationAngleRad), 0,
-		0, 1, 0, 0,
-		-sinf(rotationAngleRad), 0, cosf(rotationAngleRad), 	0,
-		0, 0, 0, 1);
+		std::cos(rotationAngleRad),		0,			std::sin(rotationAngleRad), 	0,
+		0, 								1, 			0,								0,
+		-std::sin(rotationAngleRad), 	0,			std::cos(rotationAngleRad), 	0,
+		0, 								0,			0,								1);
 
 	mat4x4 const rotationMatrixZ(
-		cosf(pi),	-sinf(pi),	0,			0,
-		sinf(pi), 	cosf(pi), 	0,			0,
+		std::cos(pi),	-std::sin(pi),	0,			0,
+		std::sin(pi), 	std::cos(pi), 	0,			0,
 		0,				0,				1,			0,
 		0, 				0,				0,			1);
 
@@ -190,11 +101,7 @@ void runFragmentShader( unsigned char* frameBuffer,
 
     float3 colour = make_float3(0.0f, 0.0f, 0.0f);
 
-    const unsigned int lightSourceCount = 1;
-    const globalLight lightSources[lightSourceCount] = {{make_float3(0.3f, 0.5f, 1.0f), make_float3(1.0f, 1.0f, 1.0f)}};
-
-	for (unsigned int lightSource = 0; lightSource < lightSourceCount; lightSource++) {
-		globalLight l = lightSources[lightSource];
+	for (globalLight const &l : lightSources) {
 		float lightNormalDotProduct = 
 			normal.x * l.direction.x + normal.y * l.direction.y + normal.z * l.direction.z;
 
@@ -208,9 +115,9 @@ void runFragmentShader( unsigned char* frameBuffer,
 		colour.z += diffuseReflectionColour.z * lightNormalDotProduct;
 	}
 
-    colour.x = fminf(fmaxf(colour.x, 0.0f), 1.0f);
-    colour.y = fminf(fmaxf(colour.y, 0.0f), 1.0f);
-    colour.z = fminf(fmaxf(colour.z, 0.0f), 1.0f);
+    colour.x = std::min(std::max(colour.x, 0.0f), 1.0f);
+    colour.y = std::min(std::max(colour.y, 0.0f), 1.0f);
+    colour.z = std::min(std::max(colour.z, 0.0f), 1.0f);
 
     frameBuffer[4 * baseIndex + 0] = colour.x * 255.0f;
     frameBuffer[4 * baseIndex + 1] = colour.y * 255.0f;
@@ -231,46 +138,40 @@ void rasteriseTriangle( float4 &v0, float4 &v1, float4 &v2,
                         GPUMesh &mesh,
                         unsigned int triangleIndex,
                         unsigned char* frameBuffer,
-                        int* depthBuffer,
+                        float* depthBuffer,
                         unsigned int const width,
                         unsigned int const height ) {
 
     // Compute the bounding box of the triangle.
     // Pixels that are intersecting with the triangle can only lie in this rectangle
-	unsigned int minx = unsigned(floorf(fminf(fminf(v0.x, v1.x), v2.x)));
-	unsigned int maxx = unsigned(ceilf(fmaxf(fmaxf(v0.x, v1.x), v2.x)));
-	unsigned int miny = unsigned(floorf(fminf(fminf(v0.y, v1.y), v2.y)));
-	unsigned int maxy = unsigned(ceilf(fmaxf(fmaxf(v0.y, v1.y), v2.y)));
+	unsigned int minx = unsigned(std::floor(std::min(std::min(v0.x, v1.x), v2.x)));
+	unsigned int maxx = unsigned(std::ceil(std::max(std::max(v0.x, v1.x), v2.x)));
+	unsigned int miny = unsigned(std::floor(std::min(std::min(v0.y, v1.y), v2.y)));
+	unsigned int maxy = unsigned(std::ceil(std::max(std::max(v0.y, v1.y), v2.y)));
 
 	// Make sure the screen coordinates stay inside the window
     // This ensures parts of the triangle that are outside the
     // view of the camera are not drawn.
-	minx = fmaxf(minx, (unsigned int) 0);
-	maxx = fminf(maxx, width);
-	miny = fmaxf(miny, (unsigned int) 0);
-	maxy = fminf(maxy, height);
+	minx = std::max(minx, (unsigned int) 0);
+	maxx = std::min(maxx, width);
+	miny = std::max(miny, (unsigned int) 0);
+	maxy = std::min(maxy, height);
 
 	// We iterate over each pixel in the triangle's bounding box
 	for (unsigned int x = minx; x < maxx; x++) {
 		for (unsigned int y = miny; y < maxy; y++) {
 			float u, v, w;
 			// For each point in the bounding box, determine whether that point lies inside the triangle
-			if (isPointInTriangle(v0, v1, v2, x, y, u, v, w)) {
+			if (inPointInTriangle(v0, v1, v2, x, y, u, v, w)) {
 				// If it does, compute the distance between that point on the triangle and the screen
 				float pixelDepth = computeDepth(v0, v1, v2, make_float3(u, v, w));
 				// If the point is closer than any point we have seen thus far, render it.
 				// Otherwise it is hidden behind another object, and we can throw it away
 				// Because it will be invisible anyway.
-                if (pixelDepth >= -1 && pixelDepth <= 1) {
-					int pixelDepthConverted = depthFloatToInt(pixelDepth);
-                 	if (pixelDepthConverted < depthBuffer[y * width + x]) {
-					    // If it is, we update the depth buffer to the new depth.
-					    depthBuffer[y * width + x] = pixelDepthConverted;
-
-					    // And finally we determine the colour of the pixel, now that 
-					    // we know our pixel is the closest we have seen thus far.
-						runFragmentShader(frameBuffer, x + (width * y), mesh, triangleIndex, make_float3(u, v, w));
-					}
+                if (pixelDepth >= -1 && pixelDepth <= 1 && pixelDepth < depthBuffer[y * width + x]) {
+				    // If it is, we update the depth buffer to the new depth.
+					depthBuffer[y * width + x] = pixelDepth;
+					runFragmentShader(frameBuffer, x + (width * y), mesh, triangleIndex, make_float3(u, v, w));
 				}
 			}
 		}
@@ -286,7 +187,7 @@ void renderMeshes(
         unsigned int width,
         unsigned int height,
         unsigned char* frameBuffer,
-        int* depthBuffer
+        float* depthBuffer
 ) {
 
     for(unsigned int item = 0; item < totalItemsToRender; item++) {
@@ -357,6 +258,25 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
     std::cout << "Rendering an image on the GPU.." << std::endl;
     std::cout << "Loading '" << inputFile << "' file... " << std::endl;
 
+    node n1(NULL, 1, "Node 1");
+    node n2(&n1, 2, "Node 2");
+
+    std::cout << "We have two nodes: " << n1.getTime() << " and " << n2.getTime() << std::endl;
+
+    std::cout << n1.getName() << " has the parent: " << n1.getParent() == NULL ? "NULL" : n1.getParent().getName() << std::endl;
+    std::cout << n2.getName() << " has the parent: " << n2.getParent() == NULL ? "NULL" : n2.getParent().getName() << std::endl;
+
+    int count;
+    checkCudaErrors(cudaGetDeviceCount(&count));
+    std::cout << "Device count: " << count << std::endl;
+
+    cudaDeviceProp props;
+    checkCudaErrors(cudaGetDeviceProperties(&props, 0));
+
+    std::cout << "Props: " << props.name << std::endl;
+
+    checkCudaErrors(cudaSetDevice(0));
+
     std::vector<GPUMesh> meshes = loadWavefrontGPU(inputFile, false);
 
     // We first need to allocate some buffers.
@@ -370,9 +290,9 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
 		frameBuffer[i + 3] = 255;
 	}
 
-	int* depthBuffer = new int[width * height];
+	float* depthBuffer = new float[width * height];
 	for(unsigned int i = 0; i < width * height; i++) {
-    	depthBuffer[i] = 16777216; // = 2 ^ 24
+    	depthBuffer[i] = 1;
     }
 
     float3 boundingBoxMin = make_float3(std::numeric_limits<float>::max(), std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
@@ -398,6 +318,8 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
             boundingBoxMax.z - boundingBoxMin.z);
     float largestBoundingBoxSide = std::max(std::max(boundingBoxDimensions.x, boundingBoxDimensions.y), boundingBoxDimensions.z);
 
+
+
     // Each recursion level splits up the lowest level nodes into 28 smaller ones.
     // This regularity means we can calculate the total number of objects we need to render
     // which we can of course preallocate
@@ -417,6 +339,7 @@ std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int widt
 			totalItemsToRender, workQueue,
 			meshes.data(), meshes.size(),
 			width, height, frameBuffer, depthBuffer);
+
 
     std::cout << "Finished!" << std::endl;
 

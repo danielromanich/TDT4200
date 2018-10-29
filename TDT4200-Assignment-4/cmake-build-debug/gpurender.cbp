@@ -8,44 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
+				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
+				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
+				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gpurender">
-				<Option output="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/gpurender/gpurender" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
+				<Option output="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/gpurender/gpurender" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DPROJECT_SOURCE_DIR=&quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4&quot;"/>
-					<Add directory="/usr/local/cuda-10.0/include"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4&quot;"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
@@ -56,21 +55,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 gpurender"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 gpurender"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gpurender/fast">
-				<Option output="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/gpurender/gpurender" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
+				<Option output="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/gpurender/gpurender" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DPROJECT_SOURCE_DIR=&quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4&quot;"/>
-					<Add directory="/usr/local/cuda-10.0/include"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4&quot;"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
@@ -81,80 +79,83 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 gpurender/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 gpurender/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/.gitignore">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/.gitignore">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/CMakeLists.txt">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/CMakeLists.txt">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/cmake-build-debug/CMakeFiles/gpurender.dir/src/gpu/gpurender_generated_gpurasteriser.cu.o">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/cmake-build-debug/CMakeFiles/gpurender.dir/src/gpu/gpurender_generated_gpurasteriser.cu.o">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/common/arrrgh.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/common/arrrgh.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/common/lodepng.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/common/lodepng.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/common/lodepng.h">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/common/lodepng.h">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/cpurasteriser.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/cpurasteriser.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/cpurasteriser.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/cpurasteriser.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/OBJLoader.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/OBJLoader.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/OBJLoader.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/OBJLoader.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/floats.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/floats.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/geometry.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/geometry.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/geometry.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/cpu/utilities/geometry.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/gpurasteriser.cu">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/gpurasteriser.cu">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/gpurasteriser.cuh">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/gpurasteriser.cuh">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/OBJLoader.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/Node.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/OBJLoader.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/OBJLoader.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/cuda_error_helper.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/OBJLoader.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/geometry.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/cuda_error_helper.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/geometry.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/geometry.cpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/mat4.hpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/geometry.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/src/main.cpp">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/gpu/utilities/mat4.hpp">
 			<Option target="gpurender"/>
 		</Unit>
-		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200/TDT4200-Assignment-4/CMakeLists.txt">
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/src/main.cpp">
+			<Option target="gpurender"/>
+		</Unit>
+		<Unit filename="/home/daniel/Desktop/Skole/TDT4200/TDT4200-Assignment-4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
