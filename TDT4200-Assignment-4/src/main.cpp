@@ -7,8 +7,8 @@
 int main(int argc, const char **argv) {
 	const std::string defaultInput("../input/spheres.obj");
 	const std::string defaultOutput("../output/sphere.png");
-	const unsigned int defaultWidth = 1920 * 4;
-	const unsigned int defaultHeight = 1080 * 4;
+	const unsigned int defaultWidth = 1920;
+	const unsigned int defaultHeight = 1080;
 	const unsigned int defaultDepth = 3;
 	arrrgh::parser parser("gpurender", "Renders raster images on the CPU or GPU");
 	const auto& showHelp = parser.add<bool>(
