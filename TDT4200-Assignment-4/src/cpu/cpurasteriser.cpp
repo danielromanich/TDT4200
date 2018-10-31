@@ -104,45 +104,42 @@ inline void runFragmentShader( std::vector<unsigned char> &frameBuffer,
  * @param height                  height of the image
  */
 inline void rasteriseTriangles( Mesh &transformedMesh,
-                         std::vector<unsigned char> &frameBuffer,
-                         std::vector<float> &depthBuffer,
-                         unsigned int const width,
-                         unsigned int const height )
+                                std::vector<unsigned char> &frameBuffer,
+                                std::vector<float> &depthBuffer,
+                                unsigned int const width,
+                                unsigned int const height )
 {
-	for (unsigned int i = 0; i < transformedMesh.faceCount(); i++) {
+    for (unsigned int i = 0; i < transformedMesh.faceCount(); i++) {
 
-		Face face = transformedMesh.getFace(i);
-		unsigned int minx = int(std::floor(std::min(std::min(face.v0.x, face.v1.x), face.v2.x)));
-		unsigned int maxx = int(std::ceil (std::max(std::max(face.v0.x, face.v1.x), face.v2.x)));
-		unsigned int miny = int(std::floor(std::min(std::min(face.v0.y, face.v1.y), face.v2.y)));
-		unsigned int maxy = int(std::ceil (std::max(std::max(face.v0.y, face.v1.y), face.v2.y)));
+        Face face = transformedMesh.getFace(i);
+        unsigned int minx = int(std::floor(std::min(std::min(face.v0.x, face.v1.x), face.v2.x)));
+        unsigned int maxx = int(std::ceil (std::max(std::max(face.v0.x, face.v1.x), face.v2.x)));
+        unsigned int miny = int(std::floor(std::min(std::min(face.v0.y, face.v1.y), face.v2.y)));
+        unsigned int maxy = int(std::ceil (std::max(std::max(face.v0.y, face.v1.y), face.v2.y)));
 
 
 
-		// Let's make sure the screen coordinates stay inside the window
-		minx = std::max(minx, (unsigned int) 0);
-		maxx = std::min(maxx, width);
-		miny = std::max(miny, (unsigned int) 0);
-		maxy = std::min(maxy, height);
+        // Let's make sure the screen coordinates stay inside the window
+        minx = std::max(minx, (unsigned int) 0);
+        maxx = std::min(maxx, width);
+        miny = std::max(miny, (unsigned int) 0);
+        maxy = std::min(maxy, height);
 
-		// We iterate over each pixel in the triangle's bounding box
+        // We iterate over each pixel in the triangle's bounding box
         for(unsigned int x = minx; x < maxx; x++) {
-			for(unsigned int y = miny; y < maxy; y++) {
-				float u, v, w;
-				if(face.inRange(x,y,u,v,w)){
-                    {
-                        float pixelDepth = face.getDepth(u,v,w);
-                        if( pixelDepth >= -1 && pixelDepth <= 1 && pixelDepth < depthBuffer.at(y * width + x)) {
-                            depthBuffer.at(y * width + x) = pixelDepth;
-                            runFragmentShader(frameBuffer, x + (width * y), face, float3(u,v,w));
-                        }
+            for(unsigned int y = miny; y < maxy; y++) {
+                float u, v, w;
+                if(face.inRange(x,y,u,v,w)){
+                    float pixelDepth = face.getDepth(u,v,w);
+                    if( pixelDepth >= -1 && pixelDepth <= 1 && pixelDepth < depthBuffer.at(y * width + x)) {
+                        depthBuffer.at(y * width + x) = pixelDepth;
+                        runFragmentShader(frameBuffer, x + (width * y), face, float3(u,v,w));
                     }
-				}
-			}
-		}
-	}
+                }
+            }
+        }
+    }
 }
-
 struct workItemCPU {
     float scale;
     float3 distanceOffset;
@@ -151,84 +148,84 @@ struct workItemCPU {
 };
 
 inline void fillWorkQueue(
-                std::vector<workItemCPU> &workQueue,
-				float largestBoundingBoxSide,
-				int depthLimit,
-				float scale = 1.0,
-				float3 distanceOffset = {0, 0, 0}) {
+        std::vector<workItemCPU> &workQueue,
+        float largestBoundingBoxSide,
+        int depthLimit,
+        float scale = 1.0,
+        float3 distanceOffset = {0, 0, 0}) {
 
-	// Queue a work item at the current scale and location
+    // Queue a work item at the current scale and location
     workQueue.emplace_back(scale, distanceOffset);
 
-	// Check whether we've reached the recursive depth of the fractal we want to reach
-	depthLimit--;
-	if(depthLimit == 0) {
-		return;
-	}
+    // Check whether we've reached the recursive depth of the fractal we want to reach
+    depthLimit--;
+    if(depthLimit == 0) {
+        return;
+    }
 
-	// Now we recursively draw the meshes in a smaller size
-	for(int offsetX = -1; offsetX <= 1; offsetX++) {
-		for(int offsetY = -1; offsetY <= 1; offsetY++) {
-			for(int offsetZ = -1; offsetZ <= 1; offsetZ++) {
-				float3 offset(offsetX,offsetY,offsetZ);
-				// We draw the new objects in a grid around the "main" one.
-				// We thus skip the location of the object itself.
-				if(offset == 0) {
-					continue;
-				}
+    // Now we recursively draw the meshes in a smaller size
+    for(int offsetX = -1; offsetX <= 1; offsetX++) {
+        for(int offsetY = -1; offsetY <= 1; offsetY++) {
+            for(int offsetZ = -1; offsetZ <= 1; offsetZ++) {
+                float3 offset(offsetX,offsetY,offsetZ);
+                // We draw the new objects in a grid around the "main" one.
+                // We thus skip the location of the object itself.
+                if(offset == 0) {
+                    continue;
+                }
 
-				float smallerScale = scale / 3.0f;
-				float3 displacedOffset(
-					distanceOffset + offset * (largestBoundingBoxSide / 2.0f) * scale
-				);
+                float smallerScale = scale / 3.0f;
+                float3 displacedOffset(
+                        distanceOffset + offset * (largestBoundingBoxSide / 2.0f) * scale
+                );
 
                 fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit, smallerScale, displacedOffset);
-			}
-		}
-	}
+            }
+        }
+    }
 
 }
 
 // This function kicks off the rasterisation process.
 std::vector<unsigned char> rasteriseCPU(std::string inputFile, unsigned int width, unsigned int height, unsigned int depthLimit) {
-	std::cout << "Rendering an image on the CPU.." << std::endl;
+    std::cout << "Rendering an image on the CPU.." << std::endl;
     std::cout << "Loading '" << inputFile << "' file... " << std::endl;
 
-	std::vector<Mesh> meshes = loadWavefront(inputFile, false);
+    std::vector<Mesh> meshes = loadWavefront(inputFile, false);
 
-	// We first need to allocate some buffers.
-	// The framebuffer contains the image being rendered.
-	std::vector<unsigned char> frameBuffer;
-	// The depth buffer is used to make sure that objects closer to the camera occlude/obscure objects that are behind it
-	std::vector<float> depthBuffer;
-	frameBuffer.resize(width * height * 4, 0);
-	for (unsigned int i = 3; i < (4 * width * height); i+=4) {
-		frameBuffer.at(i) = 255;
-	}
-	depthBuffer.resize(width * height, 1);
+    // We first need to allocate some buffers.
+    // The framebuffer contains the image being rendered.
+    std::vector<unsigned char> frameBuffer;
+    // The depth buffer is used to make sure that objects closer to the camera occlude/obscure objects that are behind it
+    std::vector<float> depthBuffer;
+    frameBuffer.resize(width * height * 4, 0);
+    for (unsigned int i = 3; i < (4 * width * height); i+=4) {
+        frameBuffer.at(i) = 255;
+    }
+    depthBuffer.resize(width * height, 1);
 
-	float3 boundingBoxMin(std::numeric_limits<float>::max());
-	float3 boundingBoxMax(std::numeric_limits<float>::min());
+    float3 boundingBoxMin(std::numeric_limits<float>::max());
+    float3 boundingBoxMax(std::numeric_limits<float>::min());
 
-	std::cout << "Rendering image... " << std::flush;
+    std::cout << "Rendering image... " << std::flush;
 
-	std::vector<Mesh> transformedMeshes;
-	for(unsigned int i = 0; i < meshes.size(); i++) {
-		transformedMeshes.push_back(meshes.at(i).clone());
+    std::vector<Mesh> transformedMeshes;
+    for(unsigned int i = 0; i < meshes.size(); i++) {
+        transformedMeshes.push_back(meshes.at(i).clone());
 
-		for(unsigned int vertex = 0; vertex < meshes.at(i).vertices.size(); vertex++) {
-			boundingBoxMin.x = std::min(boundingBoxMin.x, meshes.at(i).vertices.at(vertex).x);
-			boundingBoxMin.y = std::min(boundingBoxMin.y, meshes.at(i).vertices.at(vertex).y);
-			boundingBoxMin.z = std::min(boundingBoxMin.z, meshes.at(i).vertices.at(vertex).z);
+        for(unsigned int vertex = 0; vertex < meshes.at(i).vertices.size(); vertex++) {
+            boundingBoxMin.x = std::min(boundingBoxMin.x, meshes.at(i).vertices.at(vertex).x);
+            boundingBoxMin.y = std::min(boundingBoxMin.y, meshes.at(i).vertices.at(vertex).y);
+            boundingBoxMin.z = std::min(boundingBoxMin.z, meshes.at(i).vertices.at(vertex).z);
 
-			boundingBoxMax.x = std::max(boundingBoxMax.x, meshes.at(i).vertices.at(vertex).x);
-			boundingBoxMax.y = std::max(boundingBoxMax.y, meshes.at(i).vertices.at(vertex).y);
-			boundingBoxMax.z = std::max(boundingBoxMax.z, meshes.at(i).vertices.at(vertex).z);
-		}
-	}
+            boundingBoxMax.x = std::max(boundingBoxMax.x, meshes.at(i).vertices.at(vertex).x);
+            boundingBoxMax.y = std::max(boundingBoxMax.y, meshes.at(i).vertices.at(vertex).y);
+            boundingBoxMax.z = std::max(boundingBoxMax.z, meshes.at(i).vertices.at(vertex).z);
+        }
+    }
 
-	float3 boundingBoxDimensions = boundingBoxMax - boundingBoxMin;
-	float largestBoundingBoxSide = std::max(std::max(boundingBoxDimensions.x, boundingBoxDimensions.y), boundingBoxDimensions.z);
+    float3 boundingBoxDimensions = boundingBoxMax - boundingBoxMin;
+    float largestBoundingBoxSide = std::max(std::max(boundingBoxDimensions.x, boundingBoxDimensions.y), boundingBoxDimensions.z);
 
     std::vector<workItemCPU> workQueue;
 
@@ -242,20 +239,19 @@ std::vector<unsigned char> rasteriseCPU(std::string inputFile, unsigned int widt
 
     workQueue.reserve(totalItemsToRender);
 
-	fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit);
+    fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit);
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    #pragma omp parallel for schedule(dynamic, 5)
+    #pragma omp parallel for schedule(dynamic, 1)
     for(unsigned int item = 0; item < totalItemsToRender; item++) {
-        // std::cout << "Thread #" << omp_get_thread_num() << std::endl;
         if(item % 10000 == 0) {
             std::cout << item << "/" << totalItemsToRender << " complete." << std::endl;
         }
         workItemCPU objectToRender = workQueue.at(item);
         for (unsigned int i = 0; i < meshes.size(); i++) {
             Mesh &mesh = meshes.at(i);
-            Mesh transformedMesh = meshes.at(i).clone(); //transformedMeshes.at(i);
+            Mesh transformedMesh = transformedMeshes.at(i);
             runVertexShader(mesh, transformedMesh, objectToRender.distanceOffset, objectToRender.scale, width, height);
             rasteriseTriangles(transformedMesh, frameBuffer, depthBuffer, width, height);
         }

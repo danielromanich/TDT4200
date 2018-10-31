@@ -20,15 +20,15 @@ class globalLight {
 public:
     float3 direction;
     float3 colour;
-    __host__ __device__ globalLight(float3 const vdirection, float3 const vcolour) : direction(vdirection),
-                                                                                     colour(vcolour) {}
+    __host__ __device__ globalLight(float3 const vdirection, float3 const vcolour) : direction(vdirection), colour(vcolour) {}
 };
 
 __host__ __device__ float dotGPU(float3 a, float3 b) {
     return a.x * b.x + a.y * b.y + a.z * b.z;
 }
 
-__host__ __device__ float3 normalizeGPU(float3 v) {
+__host__ __device__ float3 normalizeGPU(float3 v)
+{
     float invLen = 1.0f / sqrtf(dotGPU(v, v));
     v.x *= invLen;
     v.y *= invLen;
@@ -46,12 +46,12 @@ __host__ __device__ bool isPointInTriangle(
         float4 const &v0, float4 const &v1, float4 const &v2,
         unsigned int const x, unsigned int const y,
         float &u, float &v, float &w) {
-    u = (((v1.y - v2.y) * (x - v2.x)) + ((v2.x - v1.x) * (y - v2.y))) /
+    u = (((v1.y - v2.y) * (x    - v2.x)) + ((v2.x - v1.x) * (y    - v2.y))) /
         (((v1.y - v2.y) * (v0.x - v2.x)) + ((v2.x - v1.x) * (v0.y - v2.y)));
     if (u < 0) {
         return false;
     }
-    v = (((v2.y - v0.y) * (x - v2.x)) + ((v0.x - v2.x) * (y - v2.y))) /
+    v = (((v2.y - v0.y) * (x    - v2.x)) + ((v0.x - v2.x) * (y    - v2.y))) /
         (((v1.y - v2.y) * (v0.x - v2.x)) + ((v2.x - v1.x) * (v0.y - v2.y)));
     if (v < 0) {
         return false;
@@ -108,58 +108,58 @@ struct workItemGPU {
     float scale;
     float3 distanceOffset;
 
-    workItemGPU(float &scale_, float3 &distanceOffset_) : scale(scale_), distanceOffset(distanceOffset_) {}
-
+    workItemGPU(float& scale_, float3& distanceOffset_) : scale(scale_), distanceOffset(distanceOffset_) {}
     workItemGPU() : scale(1), distanceOffset(make_float3(0, 0, 0)) {}
 };
 
-__device__ void runVertexShader(float4 &vertex,
-                                float3 positionOffset,
-                                float scale,
-                                unsigned int const width,
-                                unsigned int const height,
-                                float const rotationAngle = 0) {
+void runVertexShader( float4 &vertex,
+                      float3 positionOffset,
+                      float scale,
+                      unsigned int const width,
+                      unsigned int const height,
+                      float const rotationAngle = 0)
+{
     float const pi = 3.1415926f;
     // The matrices defined below are the ones used to transform the vertices and normals.
 
     // This projection matrix assumes a 16:9 aspect ratio, and an field of view (FOV) of 90 degrees.
     mat4x4 const projectionMatrix(
-            0.347270, 0, 0, 0,
-            0, 0.617370, 0, 0,
-            0, 0, -1, -0.2f,
-            0, 0, -1, 0);
+            0.347270,   0, 			0, 		0,
+            0,	  		0.617370, 	0,		0,
+            0,	  		0,			-1, 	-0.2f,
+            0,	  		0,			-1,		0);
 
     mat4x4 translationMatrix(
-            1, 0, 0, 0 + positionOffset.x /*X*/,
-            0, 1, 0, 0 + positionOffset.y /*Y*/,
-            0, 0, 1, -10 + positionOffset.z /*Z*/,
-            0, 0, 0, 1);
+            1,			0,			0,			0 + positionOffset.x /*X*/,
+            0,			1,			0,			0 + positionOffset.y /*Y*/,
+            0,			0,			1,			-10 + positionOffset.z /*Z*/,
+            0,			0,			0,			1);
 
     mat4x4 scaleMatrix(
-            scale/*X*/, 0, 0, 0,
-            0, scale/*Y*/, 0, 0,
-            0, 0, scale/*Z*/, 0,
-            0, 0, 0, 1);
+            scale/*X*/,	0,			0,				0,
+            0, 			scale/*Y*/, 0,				0,
+            0, 			0,			scale/*Z*/, 	0,
+            0, 			0,			0,				1);
 
     mat4x4 const rotationMatrixX(
-            1, 0, 0, 0,
-            0, cosf(0), -sinf(0), 0,
-            0, sinf(0), cosf(0), 0,
-            0, 0, 0, 1);
+            1,			0,				0, 				0,
+            0, 			cosf(0), 	-sinf(0),	0,
+            0, 			sinf(0),	cosf(0), 	0,
+            0, 			0,				0,				1);
 
-    float const rotationAngleRad = (pi / 4.0f) + (rotationAngle / (180.0f / pi));
+    float const rotationAngleRad = (pi / 4.0f) + (rotationAngle / (180.0f/pi));
 
     mat4x4 const rotationMatrixY(
             cosf(rotationAngleRad), 0, sinf(rotationAngleRad), 0,
             0, 1, 0, 0,
-            -sinf(rotationAngleRad), 0, cosf(rotationAngleRad), 0,
+            -sinf(rotationAngleRad), 0, cosf(rotationAngleRad), 	0,
             0, 0, 0, 1);
 
     mat4x4 const rotationMatrixZ(
-            cosf(pi), -sinf(pi), 0, 0,
-            sinf(pi), cosf(pi), 0, 0,
-            0, 0, 1, 0,
-            0, 0, 0, 1);
+            cosf(pi),	-sinf(pi),	0,			0,
+            sinf(pi), 	cosf(pi), 	0,			0,
+            0,				0,				1,			0,
+            0, 				0,				0,			1);
 
     mat4x4 const MVP =
             projectionMatrix * translationMatrix * rotationMatrixX * rotationMatrixY * rotationMatrixZ * scaleMatrix;
@@ -176,11 +176,12 @@ __device__ void runVertexShader(float4 &vertex,
 }
 
 
-__device__ void runFragmentShader(unsigned char *frameBuffer,
-                                  unsigned int const baseIndex,
-                                  GPUMesh &mesh,
-                                  unsigned int triangleIndex,
-                                  float3 const &weights) {
+void runFragmentShader( unsigned char* frameBuffer,
+                        unsigned int const baseIndex,
+                        GPUMesh &mesh,
+                        unsigned int triangleIndex,
+                        float3 const &weights)
+{
     float3 normal = computeInterpolatedNormal(
             mesh.normals[3 * triangleIndex + 0],
             mesh.normals[3 * triangleIndex + 1],
@@ -226,13 +227,13 @@ __device__ void runFragmentShader(unsigned char *frameBuffer,
  * @param width                   width of the image
  * @param height                  height of the image
  */
-__device__ void rasteriseTriangle(float4 &v0, float4 &v1, float4 &v2,
-                                  GPUMesh &mesh,
-                                  unsigned int triangleIndex,
-                                  unsigned char *frameBuffer,
-                                  int *depthBuffer,
-                                  unsigned int const width,
-                                  unsigned int const height) {
+void rasteriseTriangle( float4 &v0, float4 &v1, float4 &v2,
+                        GPUMesh &mesh,
+                        unsigned int triangleIndex,
+                        unsigned char* frameBuffer,
+                        int* depthBuffer,
+                        unsigned int const width,
+                        unsigned int const height ) {
 
     // Compute the bounding box of the triangle.
     // Pixels that are intersecting with the triangle can only lie in this rectangle
@@ -248,12 +249,11 @@ __device__ void rasteriseTriangle(float4 &v0, float4 &v1, float4 &v2,
     maxx = fminf(maxx, width);
     miny = fmaxf(miny, (unsigned int) 0);
     maxy = fminf(maxy, height);
-    // auto start = std::chrono::high_resolution_clock::now();
 
     // We iterate over each pixel in the triangle's bounding box
+
     for (unsigned int x = minx; x < maxx; x++) {
         for (unsigned int y = miny; y < maxy; y++) {
-
             float u, v, w;
             // For each point in the bounding box, determine whether that point lies inside the triangle
             if (isPointInTriangle(v0, v1, v2, x, y, u, v, w)) {
@@ -264,9 +264,9 @@ __device__ void rasteriseTriangle(float4 &v0, float4 &v1, float4 &v2,
                 // Because it will be invisible anyway.
                 if (pixelDepth >= -1 && pixelDepth <= 1) {
                     int pixelDepthConverted = depthFloatToInt(pixelDepth);
-                    atomicMin(&depthBuffer[y * width + x], pixelDepthConverted);
-                    if (pixelDepthConverted == depthBuffer[y * width + x]) {
+                    if (pixelDepthConverted < depthBuffer[y * width + x]) {
                         // If it is, we update the depth buffer to the new depth.
+                        depthBuffer[y * width + x] = pixelDepthConverted;
 
                         // And finally we determine the colour of the pixel, now that
                         // we know our pixel is the closest we have seen thus far.
@@ -276,54 +276,56 @@ __device__ void rasteriseTriangle(float4 &v0, float4 &v1, float4 &v2,
             }
         }
     }
-    /*auto itemLoop = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
-    std::cout << "Item loop took: " << itemLoop << std::endl;*/
+
 }
 
-__global__ void renderMeshes(
-        unsigned int offset,
+
+void renderMeshes(
         unsigned long totalItemsToRender,
-        workItemGPU *workQueue,
-        GPUMesh *meshes,
+        workItemGPU* workQueue,
+        GPUMesh* meshes,
         unsigned int meshCount,
         unsigned int width,
         unsigned int height,
-        unsigned char *frameBuffer,
-        int *depthBuffer
+        unsigned char* frameBuffer,
+        int* depthBuffer
 ) {
 
-    //for (unsigned int item = 0; item < totalItemsToRender; item++) {
-    unsigned int item = offset * totalItemsToRender + threadIdx.x;
-    workItemGPU objectToRender = workQueue[item];
-    for (unsigned int meshIndex = 0; meshIndex < meshCount; meshIndex++) {
-        for (unsigned int triangleIndex = 0; triangleIndex < meshes[meshIndex].vertexCount / 3; triangleIndex++) {
-            float4 v0 = meshes[meshIndex].vertices[triangleIndex * 3 + 0];
-            float4 v1 = meshes[meshIndex].vertices[triangleIndex * 3 + 1];
-            float4 v2 = meshes[meshIndex].vertices[triangleIndex * 3 + 2];
+    for(unsigned int item = 0; item < totalItemsToRender; item++) {
+        workItemGPU objectToRender = workQueue[item];
+        for (unsigned int meshIndex = 0; meshIndex < meshCount; meshIndex++) {
+
+            for(unsigned int triangleIndex = 0; triangleIndex < meshes[meshIndex].vertexCount / 3; triangleIndex++) {
+                float4 v0 = meshes[meshIndex].vertices[triangleIndex * 3 + 0];
+                float4 v1 = meshes[meshIndex].vertices[triangleIndex * 3 + 1];
+                float4 v2 = meshes[meshIndex].vertices[triangleIndex * 3 + 2];
 
 
-            runVertexShader(v0, objectToRender.distanceOffset, objectToRender.scale, width, height);
-            runVertexShader(v1, objectToRender.distanceOffset, objectToRender.scale, width, height);
-            runVertexShader(v2, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v0, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v1, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v2, objectToRender.distanceOffset, objectToRender.scale, width, height);
 
 
-            rasteriseTriangle(v0, v1, v2, meshes[meshIndex], triangleIndex, frameBuffer, depthBuffer, width,
-                              height);
+
+                rasteriseTriangle(v0, v1, v2, meshes[meshIndex], triangleIndex, frameBuffer, depthBuffer, width, height);
+
+
+            }
+            auto end = std::chrono::high_resolution_clock::now();
+            auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            std::cout << "Time spent rendering the maxx took " << time << " ms" << std::endl;
         }
 
     }
-    // }
-    /*auto end = std::chrono::high_resolution_clock::now();
-    auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    std::cout << "Time spent rendering the meshes took " << time << " ms" << std::endl;*/
 }
 
 
+
 void fillWorkQueue(
-        workItemGPU *workQueue,
+        workItemGPU* workQueue,
         float largestBoundingBoxSide,
         int depthLimit,
-        unsigned long *nextIndexInQueue,
+        unsigned long* nextIndexInQueue,
         float scale = 1.0,
         float3 distanceOffset = {0, 0, 0}) {
 
@@ -333,18 +335,18 @@ void fillWorkQueue(
 
     // Check whether we've reached the recursive depth of the fractal we want to reach
     depthLimit--;
-    if (depthLimit == 0) {
+    if(depthLimit == 0) {
         return;
     }
 
     // Now we recursively draw the meshes in a smaller size
-    for (int offsetX = -1; offsetX <= 1; offsetX++) {
-        for (int offsetY = -1; offsetY <= 1; offsetY++) {
-            for (int offsetZ = -1; offsetZ <= 1; offsetZ++) {
-                float3 offset = make_float3(offsetX, offsetY, offsetZ);
+    for(int offsetX = -1; offsetX <= 1; offsetX++) {
+        for(int offsetY = -1; offsetY <= 1; offsetY++) {
+            for(int offsetZ = -1; offsetZ <= 1; offsetZ++) {
+                float3 offset = make_float3(offsetX,offsetY,offsetZ);
                 // We draw the new objects in a grid around the "main" one.
                 // We thus skip the location of the object itself.
-                if (offsetX == 0 && offsetY == 0 && offsetZ == 0) {
+                if(offsetX == 0 && offsetY == 0 && offsetZ == 0) {
                     continue;
                 }
 
@@ -355,97 +357,43 @@ void fillWorkQueue(
                         distanceOffset.z + offset.z * (largestBoundingBoxSide / 2.0f) * scale
                 );
 
-                fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit, nextIndexInQueue, smallerScale,
-                              displacedOffset);
+                fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit, nextIndexInQueue, smallerScale, displacedOffset);
             }
         }
     }
 
 }
 
-__global__ void checkValues(int *gpuDepthBuffer, int width, int height) {
-    for (unsigned int i = 0; i < 2; i++) {
-        printf("Value: %d\n", gpuDepthBuffer[i]);
-    }
-}
-
-__global__ void initFrameBuffer(unsigned char *gpuFrameBuffer, int totalWidth, int currentHeight, int dividedWidth, int factor) {
-    *(gpuFrameBuffer + 4 * totalWidth * currentHeight + 4 * dividedWidth * factor + threadIdx.x * 4 + 3) = 255;
-}
-
 // This function kicks off the rasterisation process.
-std::vector<unsigned char>
-rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, unsigned int depthLimit) {
+std::vector<unsigned char> rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, unsigned int depthLimit) {
     std::cout << "Rendering an image on the GPU.." << std::endl;
     std::cout << "Loading '" << inputFile << "' file... " << std::endl;
-
-    int count;
-    checkCudaErrors(cudaGetDeviceCount(&count));
-    std::cout << "Device count: " << count << std::endl;
-
-    cudaDeviceProp props;
-    checkCudaErrors(cudaGetDeviceProperties(&props, 0));
-
-    std::cout << "Name: " << props.name << std::endl;
-
-    checkCudaErrors(cudaSetDevice(0));
 
     std::vector<GPUMesh> meshes = loadWavefrontGPU(inputFile, false);
 
     // We first need to allocate some buffers.
     // The framebuffer contains the image being rendered.
-    unsigned char *frameBuffer = new unsigned char[width * height * 4];
+    unsigned char* frameBuffer = new unsigned char[width * height * 4];
     // The depth buffer is used to make sure that objects closer to the camera occlude/obscure objects that are behind it
+    for (unsigned int i = 0; i < (4 * width * height); i+=4) {
+        frameBuffer[i + 0] = 0;
+        frameBuffer[i + 1] = 0;
+        frameBuffer[i + 2] = 0;
+        frameBuffer[i + 3] = 255;
+    }
 
-    auto start = std::chrono::high_resolution_clock::now();
-
-    int *depthBuffer = new int[width * height];
-    for (unsigned int i = 0; i < width * height; i++) {
+    int* depthBuffer = new int[width * height];
+    for(unsigned int i = 0; i < width * height; i++) {
         depthBuffer[i] = 16777216; // = 2 ^ 24
     }
 
-    unsigned char *gpuFrameBuffer;
-    int *gpuDepthBuffer;
-
-    checkCudaErrors(cudaMalloc(&gpuDepthBuffer, sizeof(int) * width * height));
-    // The task said to use memset here, but I couldnt figure out how to only write to certain bits
-    // So I just used the premade depthBuffer and copied over into the gpuDepthBuffer
-    // This is probably a bit slower, but atleast it works
-    checkCudaErrors(cudaMemcpy(gpuDepthBuffer, depthBuffer, sizeof(int) * width * height, cudaMemcpyHostToDevice));
-    // checkCudaErrors(cudaMemset(gpuDepthBuffer, ??, sizeof(int) * width * height));
-
-    checkCudaErrors(cudaMalloc(&gpuFrameBuffer, width * height * 4));
-
-
-    /*
-     * If the width of the image is too large we have to divide it to fit the block/dim size.
-     * This is also probably not an optimal way of doing it; but it works and combined with the final solution
-     * it shows a significant speedup
-     */
-    int dividedWidth = width;
-    int factor = 1;
-    while (dividedWidth > 1024) {
-        dividedWidth /= 2;
-        factor *= 2;
-    }
-
-    for (unsigned int i = 0; i < height; i++) {
-        for (int j = 0; j < factor; j++) {
-            initFrameBuffer<<<1, dividedWidth>>>(gpuFrameBuffer, width, i, dividedWidth, j);
-        }
-    }
-
-    checkCudaErrors(cudaDeviceSynchronize());
-
-    float3 boundingBoxMin = make_float3(std::numeric_limits<float>::max(), std::numeric_limits<float>::max(),
-                                        std::numeric_limits<float>::max());
-    float3 boundingBoxMax = make_float3(std::numeric_limits<float>::min(), std::numeric_limits<float>::min(),
-                                        std::numeric_limits<float>::min());
+    float3 boundingBoxMin = make_float3(std::numeric_limits<float>::max(), std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
+    float3 boundingBoxMax = make_float3(std::numeric_limits<float>::min(), std::numeric_limits<float>::min(), std::numeric_limits<float>::min());
 
     std::cout << "Rendering image... " << std::endl;
 
-    for (unsigned int i = 0; i < meshes.size(); i++) {
-        for (unsigned int vertex = 0; vertex < meshes.at(i).vertexCount; vertex++) {
+    for(unsigned int i = 0; i < meshes.size(); i++) {
+        for(unsigned int vertex = 0; vertex < meshes.at(i).vertexCount; vertex++) {
             boundingBoxMin.x = std::min(boundingBoxMin.x, meshes.at(i).vertices[vertex].x);
             boundingBoxMin.y = std::min(boundingBoxMin.y, meshes.at(i).vertices[vertex].y);
             boundingBoxMin.z = std::min(boundingBoxMin.z, meshes.at(i).vertices[vertex].z);
@@ -460,81 +408,29 @@ rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, uns
             boundingBoxMax.x - boundingBoxMin.x,
             boundingBoxMax.y - boundingBoxMin.y,
             boundingBoxMax.z - boundingBoxMin.z);
-    float largestBoundingBoxSide = std::max(std::max(boundingBoxDimensions.x, boundingBoxDimensions.y),
-                                            boundingBoxDimensions.z);
+    float largestBoundingBoxSide = std::max(std::max(boundingBoxDimensions.x, boundingBoxDimensions.y), boundingBoxDimensions.z);
 
     // Each recursion level splits up the lowest level nodes into 28 smaller ones.
     // This regularity means we can calculate the total number of objects we need to render
     // which we can of course preallocate
     unsigned long totalItemsToRender = 0;
-    for (unsigned long level = 0; level < depthLimit; level++) {
+    for(unsigned long level = 0; level < depthLimit; level++) {
         totalItemsToRender += std::pow(26ul, level);
     }
 
-    workItemGPU *workQueue = new workItemGPU[totalItemsToRender];
+    workItemGPU* workQueue = new workItemGPU[totalItemsToRender];
+
+    std::cout << "Number of items to be rendered: " << totalItemsToRender << std::endl;
 
     unsigned long counter = 0;
     fillWorkQueue(workQueue, largestBoundingBoxSide, depthLimit, &counter);
 
-    workItemGPU *gpuWorkQueue;
-    checkCudaErrors(cudaMalloc(&gpuWorkQueue, sizeof(workItemGPU) * totalItemsToRender));
-    checkCudaErrors(cudaMemcpy(gpuWorkQueue, workQueue, sizeof(workItemGPU) * totalItemsToRender, cudaMemcpyHostToDevice));
-
-    GPUMesh *cpuMeshes = new GPUMesh[meshes.size()];
-    GPUMesh *gpuMeshes;
-    checkCudaErrors(cudaMalloc(&gpuMeshes, sizeof(GPUMesh) * meshes.size()));
-    for (unsigned int i = 0; i < meshes.size(); i++) {
-        float4 *vertices;
-        float3 *normals;
-        checkCudaErrors(cudaMalloc(&vertices, sizeof(float4) * meshes.at(i).vertexCount));
-        checkCudaErrors(cudaMalloc(&normals, sizeof(float3) * meshes.at(i).vertexCount));
-        checkCudaErrors(cudaMemcpy(vertices, meshes.at(i).vertices, sizeof(float4) * meshes.at(i).vertexCount, cudaMemcpyHostToDevice));
-        checkCudaErrors(cudaMemcpy(normals, meshes.at(i).normals, sizeof(float3) * meshes.at(i).vertexCount, cudaMemcpyHostToDevice));
-        cpuMeshes[i].vertices = vertices;
-        cpuMeshes[i].normals = normals;
-        cpuMeshes[i].vertexCount = meshes.at(i).vertexCount;
-        cpuMeshes[i].hasNormals = meshes.at(i).hasNormals;
-        cpuMeshes[i].objectDiffuseColour = meshes.at(i).objectDiffuseColour;
-    }
-
-    checkCudaErrors(cudaMemcpy(gpuMeshes, cpuMeshes, sizeof(GPUMesh) * meshes.size(), cudaMemcpyHostToDevice));
-
-    std::cout << "Number of items to be rendered: " << totalItemsToRender << " " << depthLimit << std::endl;
-
-
-    // We divide the number of items to render until we can fit the division into our block
-    // The factor we end up with is the amount of "cores"
-    int newRenderAmt = totalItemsToRender;
-    int splitFactor = 1;
-    while (newRenderAmt > 1024) {
-        newRenderAmt /= 2;
-        splitFactor *= 2;
-    }
-
-    for (int i = 0; i < splitFactor; i++) {
-        renderMeshes<<<1, newRenderAmt>>>(i,
-                newRenderAmt, gpuWorkQueue,
-                gpuMeshes, meshes.size(),
-                width, height, gpuFrameBuffer, gpuDepthBuffer);
-    }
-
-    checkCudaErrors(cudaDeviceSynchronize());
-
-    auto end = std::chrono::high_resolution_clock::now();
-    auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    std::cout << "Time spent rendering the image took " << time << " ms" << std::endl;
+    renderMeshes(
+            totalItemsToRender, workQueue,
+            meshes.data(), meshes.size(),
+            width, height, frameBuffer, depthBuffer);
 
     std::cout << "Finished!" << std::endl;
-    checkCudaErrors(cudaMemcpy(frameBuffer, gpuFrameBuffer, width * height * 4, cudaMemcpyDeviceToHost));
-
-    cudaFree(gpuFrameBuffer);
-    cudaFree(gpuDepthBuffer);
-    cudaFree(gpuMeshes);
-    cudaFree(gpuWorkQueue);
-    for (unsigned int i = 0; i < meshes.size(); i++) {
-        cudaFree(meshes.at(i).vertices);
-        cudaFree(meshes.at(i).normals);
-    }
 
     // Copy the output picture into a vector so that the image dump code is happy :)
     std::vector<unsigned char> outputFramebuffer(frameBuffer, frameBuffer + (width * height * 4));
