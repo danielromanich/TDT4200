@@ -281,7 +281,7 @@ __device__ void rasteriseTriangle(float4 &v0, float4 &v1, float4 &v2,
 }
 
 __global__ void renderMeshes(
-        unsigned int offset,
+        unsigned int blockSize,
         unsigned long totalItemsToRender,
         workItemGPU *workQueue,
         GPUMesh *meshes,
@@ -293,24 +293,27 @@ __global__ void renderMeshes(
 ) {
 
     //for (unsigned int item = 0; item < totalItemsToRender; item++) {
-    unsigned int item = offset * totalItemsToRender + threadIdx.x;
-    workItemGPU objectToRender = workQueue[item];
-    for (unsigned int meshIndex = 0; meshIndex < meshCount; meshIndex++) {
-        for (unsigned int triangleIndex = 0; triangleIndex < meshes[meshIndex].vertexCount / 3; triangleIndex++) {
-            float4 v0 = meshes[meshIndex].vertices[triangleIndex * 3 + 0];
-            float4 v1 = meshes[meshIndex].vertices[triangleIndex * 3 + 1];
-            float4 v2 = meshes[meshIndex].vertices[triangleIndex * 3 + 2];
+   //  printf("Block: %i and Thread: %i\n", blockIdx.x, threadIdx.x);
+    unsigned int item = blockIdx.x * blockSize + threadIdx.x;
+    if (item < totalItemsToRender) {
+        workItemGPU objectToRender = workQueue[item];
+        for (unsigned int meshIndex = 0; meshIndex < meshCount; meshIndex++) {
+            for (unsigned int triangleIndex = 0; triangleIndex < meshes[meshIndex].vertexCount / 3; triangleIndex++) {
+                float4 v0 = meshes[meshIndex].vertices[triangleIndex * 3 + 0];
+                float4 v1 = meshes[meshIndex].vertices[triangleIndex * 3 + 1];
+                float4 v2 = meshes[meshIndex].vertices[triangleIndex * 3 + 2];
 
 
-            runVertexShader(v0, objectToRender.distanceOffset, objectToRender.scale, width, height);
-            runVertexShader(v1, objectToRender.distanceOffset, objectToRender.scale, width, height);
-            runVertexShader(v2, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v0, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v1, objectToRender.distanceOffset, objectToRender.scale, width, height);
+                runVertexShader(v2, objectToRender.distanceOffset, objectToRender.scale, width, height);
 
 
-            rasteriseTriangle(v0, v1, v2, meshes[meshIndex], triangleIndex, frameBuffer, depthBuffer, width,
-                              height);
+                rasteriseTriangle(v0, v1, v2, meshes[meshIndex], triangleIndex, frameBuffer, depthBuffer, width,
+                                  height);
+            }
+
         }
-
     }
     // }
     /*auto end = std::chrono::high_resolution_clock::now();
@@ -363,14 +366,21 @@ void fillWorkQueue(
 
 }
 
-__global__ void checkValues(int *gpuDepthBuffer, int width, int height) {
-    for (unsigned int i = 0; i < 2; i++) {
-        printf("Value: %d\n", gpuDepthBuffer[i]);
+__global__ void checkValues(unsigned char *gpuFrameBuffer, int width, int height) {
+    for (unsigned int i = 0; i < 16; i += 4) {
+        printf("R: %d (%d)\n", gpuFrameBuffer[i + 0], i);
+        printf("G: %d (%d)\n", gpuFrameBuffer[i + 1], i + 1);
+        printf("B: %d (%d)\n", gpuFrameBuffer[i + 2], i + 2);
+        printf("A: %d (%d)\n", gpuFrameBuffer[i + 3], i + 3);
     }
 }
 
-__global__ void initFrameBuffer(unsigned char *gpuFrameBuffer, int totalWidth, int currentHeight, int dividedWidth, int factor) {
-    *(gpuFrameBuffer + 4 * totalWidth * currentHeight + 4 * dividedWidth * factor + threadIdx.x * 4 + 3) = 255;
+__global__ void initFrameBuffer(unsigned char *gpuFrameBuffer, int width, int height, int blockSize, int widthFit) {
+    int currentHeight = blockIdx.x / widthFit;
+    int offset = blockIdx.x % widthFit;
+    if (currentHeight * blockSize * offset + threadIdx.x < width * height) {
+        *(gpuFrameBuffer + 4 * (width * currentHeight + blockSize * offset + threadIdx.x) + 3) = 255;
+    }
 }
 
 // This function kicks off the rasterisation process.
@@ -397,7 +407,6 @@ rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, uns
     unsigned char *frameBuffer = new unsigned char[width * height * 4];
     // The depth buffer is used to make sure that objects closer to the camera occlude/obscure objects that are behind it
 
-    auto start = std::chrono::high_resolution_clock::now();
 
     int *depthBuffer = new int[width * height];
     for (unsigned int i = 0; i < width * height; i++) {
@@ -422,19 +431,9 @@ rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, uns
      * This is also probably not an optimal way of doing it; but it works and combined with the final solution
      * it shows a significant speedup
      */
-    int dividedWidth = width;
-    int factor = 1;
-    while (dividedWidth > 1024) {
-        dividedWidth /= 2;
-        factor *= 2;
-    }
-
-    for (unsigned int i = 0; i < height; i++) {
-        for (int j = 0; j < factor; j++) {
-            initFrameBuffer<<<1, dividedWidth>>>(gpuFrameBuffer, width, i, dividedWidth, j);
-        }
-    }
-
+    double frameBlockSize = 512;
+    double widthFit = std::ceil(width / frameBlockSize);
+    initFrameBuffer<<<height * widthFit, frameBlockSize>>>(gpuFrameBuffer, width, height, frameBlockSize, widthFit);
     checkCudaErrors(cudaDeviceSynchronize());
 
     float3 boundingBoxMin = make_float3(std::numeric_limits<float>::max(), std::numeric_limits<float>::max(),
@@ -501,22 +500,20 @@ rasteriseGPU(std::string inputFile, unsigned int width, unsigned int height, uns
 
     std::cout << "Number of items to be rendered: " << totalItemsToRender << " " << depthLimit << std::endl;
 
+    double blockSize = 512;
+    double grid = std::ceil(totalItemsToRender / blockSize);
 
-    // We divide the number of items to render until we can fit the division into our block
-    // The factor we end up with is the amount of "cores"
-    int newRenderAmt = totalItemsToRender;
-    int splitFactor = 1;
-    while (newRenderAmt > 1024) {
-        newRenderAmt /= 2;
-        splitFactor *= 2;
-    }
+    dim3 blockDim(blockSize, 1, 1);
+    dim3 gridDim(grid, 1, 1);
+    std::cout << grid << std::endl;
 
-    for (int i = 0; i < splitFactor; i++) {
-        renderMeshes<<<1, newRenderAmt>>>(i,
-                newRenderAmt, gpuWorkQueue,
-                gpuMeshes, meshes.size(),
-                width, height, gpuFrameBuffer, gpuDepthBuffer);
-    }
+    auto start = std::chrono::high_resolution_clock::now();
+
+
+    renderMeshes<<<gridDim, blockDim>>>(blockSize, totalItemsToRender, gpuWorkQueue,
+            gpuMeshes, meshes.size(),
+            width, height, gpuFrameBuffer, gpuDepthBuffer);
+
 
     checkCudaErrors(cudaDeviceSynchronize());
 
