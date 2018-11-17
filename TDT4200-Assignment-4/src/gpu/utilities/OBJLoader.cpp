@@ -2,6 +2,11 @@
 #include <algorithm>
 #include <exception>
 #include <regex>
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <limits>
 #include "cuda_runtime.h"
 
 inline std::vector<std::string> split(std::string target, std::string delimiter)
